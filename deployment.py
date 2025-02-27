@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-with open(r'D:\Saitama Project\5. CC Card Fraud\xgb_model.pkl', 'rb') as f:
+with open('xgb_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 st.title('Credit Fraud Detection')
