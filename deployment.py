@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from sklearn.ensemble import RandomForestClassifier # Required for unpickling
+import xgboost as xgb # Required for unpickling
 
 # Load the trained model
 try:
