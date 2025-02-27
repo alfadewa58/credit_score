@@ -1,19 +1,10 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.ensemble import RandomForestClassifier # Required for unpickling
-import xgboost # Required for unpickling
 
 # Load the trained model
-try:
-    with open('xgb_model.pkl', 'rb') as file:
-        model = pickle.load(file)
-except FileNotFoundError:
-    st.error("Error: Model file 'xgb_model.pkl' not found.")
-    st.stop()
-except Exception as e:
-    st.error(f"Error loading model: {str(e)}")
-    st.stop()
+with open(r'D:\Saitama Project\5. CC Card Fraud\xgb_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 st.title('Credit Fraud Detection')
 
