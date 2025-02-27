@@ -1,15 +1,13 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.ensemble import RandomForestClassifier # Required for unpickling
-import xgboost as xgb # Required for unpickling
 
 # Load the trained model
 try:
     with open('xgb_model.pkl', 'rb') as file:
         model = pickle.load(file)
-except ModuleNotFoundError:
-    st.error("Error: Required module 'sklearn' not found. Please install it using 'pip install scikit-learn'")
+except FileNotFoundError:
+    st.error("Error: Model file 'xgb_model.pkl' not found.")
     st.stop()
 except Exception as e:
     st.error(f"Error loading model: {str(e)}")
