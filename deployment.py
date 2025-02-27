@@ -4,14 +4,6 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier  # Add sklearn import
 import pipreqs  # Add pipreqs import
 
-# Search for requirements.txt file
-try:
-    with open('requirements.txt', 'r') as f:
-        requirements = f.read()
-        st.write("Found requirements.txt:")
-        st.code(requirements)
-except FileNotFoundError:
-    st.error("requirements.txt not found in current directory")
 
 # Load the trained model
 with open('xgb_model.pkl', 'rb') as f:
