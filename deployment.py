@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from sklearn.ensemble import RandomForestClassifier  # Add sklearn import
+import pipreqs  # Add pipreqs import
+
+# Generate requirements.txt file
+pipreqs.pipreqs("./", force=True)
 
 # Load the trained model
 with open('xgb_model.pkl', 'rb') as f:
